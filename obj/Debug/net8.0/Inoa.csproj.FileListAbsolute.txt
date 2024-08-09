@@ -1,0 +1,14 @@
+C:\Programacao\Projetos_CS\Inoa\bin\Debug\net8.0\Inoa.exe
+C:\Programacao\Projetos_CS\Inoa\bin\Debug\net8.0\Inoa.deps.json
+C:\Programacao\Projetos_CS\Inoa\bin\Debug\net8.0\Inoa.runtimeconfig.json
+C:\Programacao\Projetos_CS\Inoa\bin\Debug\net8.0\Inoa.dll
+C:\Programacao\Projetos_CS\Inoa\bin\Debug\net8.0\Inoa.pdb
+C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\Inoa.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\Inoa.AssemblyInfoInputs.cache
+C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\Inoa.AssemblyInfo.cs
+C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\Inoa.csproj.CoreCompileInputs.cache
+C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\Inoa.dll
+C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\refint\Inoa.dll
+C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\Inoa.pdb
+C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\Inoa.genruntimeconfig.cache
+C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\ref\Inoa.dll
