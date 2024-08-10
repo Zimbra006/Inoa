@@ -8,25 +8,22 @@
     para facilitar a leitura.
 */
 
-using System.Runtime.CompilerServices;
-
 namespace Inoa
 {
     class Leitor
-    {
-        private string caminho;
+    {   
+        private static Leitor instancia = new Leitor();
         private Remetente remetente = new Remetente();
         private CredenciaisSTMP stmp = new CredenciaisSTMP();
         private List<string> emails = new List<string>();
 
-        public Leitor(string caminho)
-        {
-            this.caminho = caminho;
 
-            this.Ler();
+        public static Leitor GetLeitor()
+        {
+            return instancia;
         }
 
-        private void Ler()
+        public void Ler(string caminho)
         {
             int i = 0;
             foreach (string line in File.ReadLines(@caminho))

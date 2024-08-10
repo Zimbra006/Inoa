@@ -23,15 +23,21 @@ namespace Inoa
         static void Main(string[] args)
         {
             // Cria uma instância do Leitor
-            Leitor leitor = new Leitor("config.txt");
+            Leitor leitor = Leitor.GetLeitor();
 
-            Console.WriteLine(leitor.Remetente.email);
-            Console.WriteLine(leitor.Remetente.senha);
-            Console.WriteLine(leitor.STMP.host);
-            Console.WriteLine(leitor.STMP.port);
-            Console.WriteLine(leitor.STMP.ssl);
+            // Lê as informações no arquivo de texto e armazena
+            // e mantém elas em todas as instâncias da classe
+            leitor.Ler("config.txt");
 
-            foreach (string e in leitor.Emails)
+            Leitor leitor2 = Leitor.GetLeitor();
+
+            Console.WriteLine(leitor2.Remetente.email);
+            Console.WriteLine(leitor2.Remetente.senha);
+            Console.WriteLine(leitor2.STMP.host);
+            Console.WriteLine(leitor2.STMP.port);
+            Console.WriteLine(leitor2.STMP.ssl);
+
+            foreach (string e in leitor2.Emails)
                 Console.WriteLine(e);
 
             // Inicializar o observador
