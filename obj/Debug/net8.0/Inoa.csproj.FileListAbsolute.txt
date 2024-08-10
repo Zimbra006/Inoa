@@ -12,3 +12,4 @@ C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\refint\Inoa.dll
 C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\Inoa.pdb
 C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\Inoa.genruntimeconfig.cache
 C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\ref\Inoa.dll
+C:\Programacao\Projetos_CS\Inoa\obj\Debug\net8.0\Inoa.sourcelink.json

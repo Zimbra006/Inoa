@@ -7,7 +7,7 @@
     - Os emails a serem alertados serão lidos em um arquivo de texto.
 
     TODO:
-    - Ler os parâmetros na linha de comando
+    - Ler os parâmetros na linha de comando (Feito!)
     - Obter o valor da ação em tempo real
     - Ler os emails a serem avisados
     - Enviar os emails caso o valor ultrapasse um dos limites
@@ -22,8 +22,7 @@ namespace Inoa
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine(args.Length);
+            Observer observador = new Observer(args);
         }
     }
 }
