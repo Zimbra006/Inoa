@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Inoa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6383239dc21fc62624631f494c66c4cec9338356")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ea15abddd371936259cf3715b47b74d1b616424")]
 [assembly: System.Reflection.AssemblyProductAttribute("Inoa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Inoa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

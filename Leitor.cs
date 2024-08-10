@@ -14,7 +14,7 @@ namespace Inoa
     {   
         private static Leitor instancia = new Leitor();
         private Remetente remetente = new Remetente();
-        private CredenciaisSTMP stmp = new CredenciaisSTMP();
+        private CredenciaisSMTP smtp = new CredenciaisSMTP();
         private List<string> emails = new List<string>();
 
 
@@ -43,24 +43,24 @@ namespace Inoa
                 {
                     remetente.senha = line;
                 }
-                else if (i == 3) // Host do servidor STMP
+                else if (i == 3) // Host do servidor SMTP
                 {
-                    stmp.host = line;
+                    smtp.host = line;
                 }
-                else if (i == 4) // Porta do servido STMP
+                else if (i == 4) // Porta do servido SMTP
                 {
-                    stmp.port = int.Parse(line);
+                    smtp.port = int.Parse(line);
                 }
                 else if (i == 5) // Flag para usar SSL
                 {
-                    stmp.ssl = bool.Parse(line);
+                    smtp.ssl = bool.Parse(line);
                 }
             }
         }
 
-        public CredenciaisSTMP STMP
+        public CredenciaisSMTP SMTP
         {
-            get { return stmp; }
+            get { return smtp; }
         }
 
         public Remetente Remetente

@@ -1,6 +1,6 @@
-guilhermeamazonas@poli.ufrj.br
+guibohme@gmail.com
 xxxx
-stmp.gmail.com
+smtp.gmail.com
 465
 true
-guibohme@gmail.com
+gamoemzonas@gmail.com

@@ -10,7 +10,7 @@
     - Ler os parâmetros na linha de comando (Feito!)
     - Obter o valor da ação em tempo real
     - Ler os emails a serem avisados (Feito!)
-    - Enviar os emails caso o valor ultrapasse um dos limites
+    - Enviar os emails (Feito!) caso o valor ultrapasse um dos limites 
 
 */
 
@@ -29,19 +29,11 @@ namespace Inoa
             // e mantém elas em todas as instâncias da classe
             leitor.Ler("config.txt");
 
-            Leitor leitor2 = Leitor.GetLeitor();
-
-            Console.WriteLine(leitor2.Remetente.email);
-            Console.WriteLine(leitor2.Remetente.senha);
-            Console.WriteLine(leitor2.STMP.host);
-            Console.WriteLine(leitor2.STMP.port);
-            Console.WriteLine(leitor2.STMP.ssl);
-
-            foreach (string e in leitor2.Emails)
-                Console.WriteLine(e);
-
-            // Inicializar o observador
+            // Inicializa o observador e adiciona os emails
+            // na sua lista de destinatários
             Observer observador = new Observer(args);
+            foreach (string email in leitor.Emails)
+                observador.AdicionarEmail(email);
 
         }
     }
