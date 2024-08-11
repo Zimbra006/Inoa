@@ -6,7 +6,6 @@
 using MailKit.Net.Smtp;
 using MailKit;
 using MimeKit;
-using System.Linq.Expressions;
 
 namespace Inoa
 {
@@ -25,16 +24,15 @@ namespace Inoa
 
             emailRemetente = leitor.Remetente.email;
             senha = leitor.Remetente.senha;
-            remetente = new MailboxAddress("Augustus", emailRemetente);
+            remetente = new MailboxAddress("Notificador", emailRemetente);
 
             smtp = leitor.SMTP;
         }
 
         public Email(string endereco)
         {
-            this.destinatario = new MailboxAddress("Você", endereco);
+            this.destinatario = new MailboxAddress("", endereco);
             Console.WriteLine("Email registrado: " + endereco);
-            this.Notificar();
         }
 
         public void Notificar()
@@ -65,11 +63,10 @@ namespace Inoa
                 try
                 {
                     cliente.Send(mensagem);
-                    Console.WriteLine("Deu!!");
                 }
-                catch
+                catch (Exception ex)
                 {
-                    Console.WriteLine("Deu não.");
+                    Console.WriteLine(ex.ToString());
                 }
                 cliente.Disconnect(true);
             }

@@ -3,7 +3,10 @@
     a ação e notificar uma lista de e-mails
 */
 
-using System.Net.Sockets;
+using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Text.Json;
 
 namespace Inoa
 {
