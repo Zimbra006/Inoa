@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inoa", "Inoa.csproj", "{2E92DD36-A56A-4482-9727-6BAAD470503B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inoa", "Inoa.csproj", "{6BEE9BD8-4DA1-438D-9A59-B61BF4F495FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E92DD36-A56A-4482-9727-6BAAD470503B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E92DD36-A56A-4482-9727-6BAAD470503B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E92DD36-A56A-4482-9727-6BAAD470503B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E92DD36-A56A-4482-9727-6BAAD470503B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BEE9BD8-4DA1-438D-9A59-B61BF4F495FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BEE9BD8-4DA1-438D-9A59-B61BF4F495FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BEE9BD8-4DA1-438D-9A59-B61BF4F495FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BEE9BD8-4DA1-438D-9A59-B61BF4F495FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

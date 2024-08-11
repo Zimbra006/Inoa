@@ -18,11 +18,24 @@ namespace Inoa
         private List<Email> emails = new List<Email>();
         private DadosAtivo dadosAtivo = new DadosAtivo();
 
+        // Mensagens diferentes dependendo do valor do ativo
+        private Dictionary<string, string> mensagens = new Dictionary<string, string>(4);
+
+        // Uma medida relativa ao tamanho do intervalo entre o preço de compra e de venda
+        // Usada para determinar o tipo de mensagem que vai ser enviada aos usuários
+        private double limiteFuzzy;
         public Observer (string[] valores)
         {
-            this.simboloAtivo = valores[0];
-            this.precoVenda = Double.Parse(valores[1]);
-            this.precoCompra = Double.Parse(valores[2]);
+            simboloAtivo = valores[0];
+            precoVenda = Double.Parse(valores[1]);
+            precoCompra = Double.Parse(valores[2]);
+
+            limiteFuzzy = (precoVenda - precoCompra) / 4;
+
+            mensagens.Add("muitoBaixo", $"O valor de {simboloAtivo} está muito baixo! Corra para comprar!");
+            mensagens.Add("baixo", $"O valor de {simboloAtivo} está abaixando! Compre agora ou espere para ver se ainda vai abaixar mais.");
+            mensagens.Add("alto", $"O valor de {simboloAtivo} está subindo! Venda agora, mas ele ainda pode subir mais.");
+            mensagens.Add("muitoAlto", $"O valor de {simboloAtivo} está muito alto! Corra para vender!");
         }
 
         public void AdicionarEmail(string endereco)
@@ -50,13 +63,21 @@ namespace Inoa
 
                 Console.WriteLine($"Preço de {simboloAtivo}: {preco}" );
 
-                if (preco > precoVenda)
+                if (preco < (precoCompra - limiteFuzzy))
                 {
-                    Notificar("Pode vender!!");
+                    Notificar(mensagens["muitoBaixo"]);
                 }
                 else if (preco < precoCompra)
                 {
-                    Notificar("Pode comprar!!");
+                    Notificar(mensagens["baixo"]);
+                }
+                else if (preco > (precoVenda + limiteFuzzy))
+                {
+                    Notificar(mensagens["muitoAlto"]);
+                }
+                else if (preco > precoVenda)
+                {
+                    Notificar(mensagens["alto"]);
                 }
 
                 // Espera 30 minutos até a próxima atualização da cotação

@@ -12,6 +12,9 @@
     - Ler os emails a serem avisados (Feito!)
     - Enviar os emails caso o valor ultrapasse um dos limites (Feito!)
 
+    EXTRAS:
+    - Adicionar algum tipo de lógica fuzzy aos emails
+
 */
 
 using System;

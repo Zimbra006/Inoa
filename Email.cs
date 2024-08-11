@@ -45,11 +45,16 @@ namespace Inoa
             mail.From.Add(remetente);
             mail.To.Add(destinatario);
 
-            mail.Subject = "Teste";
+            mail.Subject = "Atualização sobre o seu ativo!!";
 
             mail.Body = new TextPart(MimeKit.Text.TextFormat.Html)
             {
-                Text = $"<b>{mensagem}</b>"
+                Text = @$"<h3>Olá, querido investidor.</h3>
+                <p> Trazemos uma atualização sobre o seu ativo: </p>
+                <h1> <b> {mensagem} </b> </h1>
+                <br><br>
+                <p>Obrigado por usar nosso produto!</p>
+                "
             };
 
             using (var cliente = new SmtpClient())

@@ -1,5 +1,5 @@
 guibohme@gmail.com
-sqssolqcmjxqnoss
+xxxx
 smtp.gmail.com
 465
 true
