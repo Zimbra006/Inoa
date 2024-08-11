@@ -19,7 +19,7 @@ namespace Inoa
         private DadosAtivo dadosAtivo = new DadosAtivo();
 
         // Mensagens diferentes dependendo do valor do ativo
-        private Dictionary<string, string> mensagens = new Dictionary<string, string>(4);
+        private CriadorMensagens criadorMensagens;
 
         // Uma medida relativa ao tamanho do intervalo entre o preço de compra e de venda
         // Usada para determinar o tipo de mensagem que vai ser enviada aos usuários
@@ -32,10 +32,7 @@ namespace Inoa
 
             limiteFuzzy = (precoVenda - precoCompra) / 4;
 
-            mensagens.Add("muitoBaixo", $"O valor de {simboloAtivo} está muito baixo! Corra para comprar!");
-            mensagens.Add("baixo", $"O valor de {simboloAtivo} está abaixando! Compre agora ou espere para ver se ainda vai abaixar mais.");
-            mensagens.Add("alto", $"O valor de {simboloAtivo} está subindo! Venda agora, mas ele ainda pode subir mais.");
-            mensagens.Add("muitoAlto", $"O valor de {simboloAtivo} está muito alto! Corra para vender!");
+            criadorMensagens = new(simboloAtivo);
         }
 
         public void AdicionarEmail(string endereco)
@@ -65,19 +62,19 @@ namespace Inoa
 
                 if (preco < (precoCompra - limiteFuzzy))
                 {
-                    Notificar(mensagens["muitoBaixo"]);
+                    Notificar(criadorMensagens.CriarMensagem("muitoBaixo", preco));
                 }
                 else if (preco < precoCompra)
                 {
-                    Notificar(mensagens["baixo"]);
+                    Notificar(criadorMensagens.CriarMensagem("baixo", preco));
                 }
                 else if (preco > (precoVenda + limiteFuzzy))
                 {
-                    Notificar(mensagens["muitoAlto"]);
+                    Notificar(criadorMensagens.CriarMensagem("muitoAlto", preco));
                 }
                 else if (preco > precoVenda)
                 {
-                    Notificar(mensagens["alto"]);
+                    Notificar(criadorMensagens.CriarMensagem("alto", preco));
                 }
 
                 // Espera 30 minutos até a próxima atualização da cotação

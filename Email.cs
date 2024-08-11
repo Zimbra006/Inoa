@@ -53,7 +53,8 @@ namespace Inoa
                 <p> Trazemos uma atualização sobre o seu ativo: </p>
                 <h1> <b> {mensagem} </b> </h1>
                 <br><br>
-                <p>Obrigado por usar nosso produto!</p>
+                <p> Tenha em mente que o valor listado é referente a 30 minutos atrás. </p>
+                <p> Obrigado por usar o nosso produto! </p>
                 "
             };
 
