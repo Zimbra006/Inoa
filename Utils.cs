@@ -15,8 +15,8 @@ namespace Inoa
         public bool ssl {get; set; }
     }
 
-    class Ativo(dynamic regularMarketPrice) {
-        public dynamic regularMarketPrice {get; set;} = regularMarketPrice;
+    class Ativo(double regularMarketPrice) {
+        public double regularMarketPrice {get; set;} = regularMarketPrice;
     }
 
     class ResultsJson(List<Ativo> results, string requestedAt, string took) {

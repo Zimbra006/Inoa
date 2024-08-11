@@ -35,21 +35,21 @@ namespace Inoa
             Console.WriteLine("Email registrado: " + endereco);
         }
 
-        public void Notificar()
+        public void Notificar(string mensagem)
         {
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
             Console.WriteLine("Enviando...");
 
-            MimeMessage mensagem = new MimeMessage();
+            MimeMessage mail = new MimeMessage();
 
-            mensagem.From.Add(remetente);
-            mensagem.To.Add(destinatario);
+            mail.From.Add(remetente);
+            mail.To.Add(destinatario);
 
-            mensagem.Subject = "Teste";
+            mail.Subject = "Teste";
 
-            mensagem.Body = new TextPart(MimeKit.Text.TextFormat.Html)
+            mail.Body = new TextPart(MimeKit.Text.TextFormat.Html)
             {
-                Text = "<b>Testando.</b>"
+                Text = $"<b>{mensagem}</b>"
             };
 
             using (var cliente = new SmtpClient())
@@ -62,7 +62,7 @@ namespace Inoa
 
                 try
                 {
-                    cliente.Send(mensagem);
+                    cliente.Send(mail);
                 }
                 catch (Exception ex)
                 {

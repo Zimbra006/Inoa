@@ -10,7 +10,7 @@
     - Ler os parâmetros na linha de comando (Feito!)
     - Obter o valor da ação em tempo real (Feito...?)
     - Ler os emails a serem avisados (Feito!)
-    - Enviar os emails (Feito!) caso o valor ultrapasse um dos limites 
+    - Enviar os emails caso o valor ultrapasse um dos limites (Feito!)
 
 */
 
@@ -34,7 +34,10 @@ namespace Inoa
             Observer observador = new Observer(args);
             foreach (string email in leitor.Emails)
                 observador.AdicionarEmail(email);
-
+            
+            // Permanece rodando até a aplicação ser suspensa
+            // Monitora o valor do ativo e notifica os emails na lista
+            observador.Observar();
         }
     }
 }
